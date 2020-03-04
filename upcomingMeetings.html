@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+<!-- Navigation-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html"><i class="fa fa-fw fa-home"></i>HOME</a></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+	    <li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans">
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="index.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Intranet</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">
+			<li><a href="calendarMeetings.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="viewMeetingsRoom.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Meeting Rooms</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+			  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+				<i class="fa fa-circle-o" style="font-size: 8px;"></i> 
+				<span class="nav-link-text">List Meetings</span> 
+			  </a>
+			  <ul class="sidenav-second-level collapse" id="collapseMulti">
+				<li>
+				  <a href="upcomingMeetings.html#upcomingMeetings"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Upcoming Meetings</a>
+				</li>
+				<li>
+				  <a href="upcomingMeetings.html#pastMeetings"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Past Meetings</a>
+				</li>
+			   </ul>
+			</li> 
+            <li><a href="newMeeting.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Create New Meeting</a></li>
+          </ul>
+        </li>
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Weekly Contributions</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> List Contributions</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">
+            <li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View (Custodians)</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing (Custodians)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Project Management</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Development</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Testing</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+	    <li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+        <!--
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-envelope"></i>
+            <span class="d-lg-none">Messages
+              <span class="badge badge-pill badge-primary">12 New</span>
+            </span>
+            <span class="indicator text-primary d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>David Miller</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>Jane Smith</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>John Doe</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all messages</a>
+          </div>
+        </li>
+        -->
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">Wilson</span></a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Profile</h6>
+            <!--<div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+               
+            </a>-->
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<section id="main-content-wrapper">
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <div class="content_header">
+		<h1 id="upcomingMeetings">Listing Meetings</h1>
+		<ol class="breadcrumb">
+			<li><a href="javascript:void(0);"><i class="fa fa-fw fa-home"></i> Meeting</a></li>
+			<li><a href="javascript:void(0);" id="listMeetings">Listing Meetings</a></li>
+			<li><a href="upcomingMeetings.html" class="active">Upcoming Meetings</a></li>
+		</ol>
+	  </div> 
+      <!-- Start Content Here -->
+      <div style="main-height: 575px;">
+			 
+			<!-- Start here -->
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				Record was successfully deleted
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div> 
+			
+			<div class="card mb-3">
+				<div class="card-header card-title">
+				  <i class="fa fa-table"></i> Upcoming Meetings 
+				  <div class="pull-right hidden-xs">
+					<button type="button" class="btn btn-add btn-sm" onclick="location.href='newMeeting.html'"><strong>Create New Meeting</strong></button>
+				  </div>
+				</div>
+
+				<div class="card-content">
+				   
+				   
+					<table class="hover table table-bordered table-striped" id="dataMeetings1" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+						  <th>Title</th>
+						  <th>Type</th>
+						  <th>Location</th>
+						  <th>Seating<br>Capacity</th>
+						  <th>Meeting Date</th>
+						  <th>Start Time</th>
+						  <th>End Time</th>
+						  <th>Action</th>
+						</tr>
+					  </thead>
+					  <tfoot>
+						<tr>
+						  <th>Title</th>
+						  <th>Type</th>
+						  <th>Location</th>
+						  <th>Seating<br>Capacity</th>
+						  <th>Meeting Date</th>
+						  <th>Start Time</th>
+						  <th>End Time</th>
+						  <th>Action</th>
+						</tr>
+					  </tfoot>
+					  <tbody>
+						<tr>
+							<td>Project Meeting 1</td>
+							<td>Brain Storming</td>
+							<td>BioTrans Meeting Room #04-07B</td>
+							<td>06</td>
+							<td>31 May, 2018</td>
+							<td>09:00</td>
+							<td>09:30</td>
+							<td>
+							<button type="button" class="btn btn-sm edit-record" onclick="location.href='viewMeeting.html'"><i class="fa fa-pencil-square-o" style="color:white"></i> Edit</button> 
+							</td>
+						</tr>
+						<tr>
+							<td>Project Meeting 2</td>
+							<td>Brain Storming</td>
+							<td>BioTrans Conference Room #04-19</td>
+							<td>14</td>
+							<td>28 May, 2018</td>
+							<td>14:00</td>
+							<td>15:30</td>
+							<td><a class="btn btn-danger btn-sm remove-record" data-toggle="modal" data-url="" data-id="1" data-target="#custom-width-modal"><i class="fa fa-trash-o" style="color:white"></i><span style="color:white"> Del</span></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Project Meeting 3</td>
+							<td>Brain Storming</td>
+							<td>Proteos Level 4 Conference Room #04-08C</td>
+							<td>11</td>
+							<td>31 May, 2018</td>
+							<td>09:00</td>
+							<td>09:30</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Project Meeting 4</td>
+							<td>Workgroup</td>
+							<td>Proteos Level 4 Conference Room #04-19A</td>
+							<td>18</td>
+							<td>15 Jun, 2018</td>
+							<td>09:00</td>
+							<td>15:30</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Project Meeting 5</td>
+							<td>Safety</td>
+							<td>BioTrans Meeting Room #04-07B</td>
+							<td>06</td>
+							<td>18 Jun, 2018</td>
+							<td>14:00</td>
+							<td>15:30</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Project Meeting 6</td>
+							<td>Safety</td>
+							<td>BioTrans Meeting Room #04-07B</td>
+							<td>06</td>
+							<td>18 Jul, 2018</td>
+							<td>14:00</td>
+							<td>15:30</td>
+							<td></td>
+						</tr>
+					</tbody>
+					</table>
+					
+				</div>
+				<!--<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+			</div>
+			
+			<div class="row" id="pastMeetings"></div>
+			<div class="card mb-3">
+				<div class="card-header card-title">
+				  <i class="fa fa-table"></i> Past Meetings 
+ 				</div>
+
+				<div class="card-content">
+				   
+				   <div class="dataTables_wrapper">
+					<table class="hover table table-bordered table-striped" id="dataMeetings2" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th data-field="cName">Title</th>
+							<th data-field="cName">Type</th>
+							<th data-field="cName">Location</th>
+							<th data-field="cName">Seating<br>Capacity</th>
+							<th data-field="cName">Meeting Date</th>
+							<th data-field="cName">Start Time</th>
+							<th data-field="cName">End Time</th>
+							<th data-field="cName">Action</th>
+						</tr>
+					  </thead>
+					  <tfoot>
+						<tr>
+						  <th>Title</th>
+						  <th>Type</th>
+						  <th>Location</th>
+						  <th>Seating<br>Capacity</th>
+						  <th>Meeting Date</th>
+						  <th>Start Time</th>
+						  <th>End Time</th>
+						  <th>Action</th>
+						</tr>
+					  </tfoot>
+					  <tbody>
+						<tr><!--onclick="retrieveMeeting('1')"-->
+							<td>Project Meeting 1</td>
+							<td>Brain Storming</td>								
+							<td>Proteos Level 4 Conference Room #04-19A</td>
+							<td>14</td>							
+							<td>31 May, 2018</td>
+							<td>09:00</td>
+							<td>09:30</td>
+ 							<td>
+							<button type="button" class="btn btn-sm edit-record" onclick="location.href='viewMeeting.html'"><i class="fa fa-pencil-square-o" style="color:white"></i> Edit</button> 
+							</td>
+						</tr>
+						<tr>
+							<td>Testing</td>
+							<td>Brain Storming</td>
+							<td>BioTrans Meeting Room #04-07B</td>
+							<td>6</td>
+							<td>31 May, 2018</td>
+							<td>14:00</td>
+							<td>15:30</td>
+							<td><a class="btn btn-danger btn-sm remove-record" data-toggle="modal" data-url="" data-id="1" data-target="#custom-width-modal"><i class="fa fa-trash-o" style="color:white"></i><span style="color:white"> Del</span></a>
+							</td>
+						</tr>
+ 					</tbody>
+					</table>
+					</div>
+				</div>
+				<!--<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
+			</div>
+			<!-- End here -->
+			
+			
+			 
+				 
+	  
+	  
+	  </div>
+	  <!-- End Content here -->
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright &copy; Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<!-- Delete Model start -->
+<div class="remove-record-model">
+    <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" style="width:55%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                	<h4 class="modal-title" id="custom-width-modalLabel">Delete Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h4>Are you sure you want to delete this record?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect remove-data-from-delete-form" data-dismiss="modal"><i class="fa fa-times" style="color:white"></i> Close</button>
+                    <a href="#" class="btn btn-danger waves-effect waves-light" id="remove-record"><i class="fa fa-trash-o" style="color:white"></i> Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete Model here -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.dataTables.js"></script>
+<script src="assets/js/vendor/dataTables.search-highlight.js"></script>
+<script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+<script>
+// Call the dataTables jQuery plugin
+$(document).ready(function() {
+	
+	$('#dataMeetings1').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false,
+	  'lengthMenu': [ [5, 10, 25, 50, -1], [5, 10, 25, 50, "All"] ],
+	  'pageLength'  : 5
+    });
+	var oTable = $('#dataMeetings1').dataTable();
+	if (oTable != oTable != null) {
+		oTable.fnSearchHighlighting();
+	}
+	
+	$('#dataMeetings2').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false,
+	  'lengthMenu': [ [5, 10, 25, 50, -1], [5, 10, 25, 50, "All"] ],
+	  'pageLength'  : 5
+    });
+	var oTable2 = $('#dataMeetings2').dataTable();
+	if (oTable2 != oTable2 != null) {
+		oTable2.fnSearchHighlighting();
+	}
+});
+</script>
+</body>
+</html>

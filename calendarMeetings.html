@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="icon" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/fullcalendar.min.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body class="fixed-nav" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+<!-- Navigation-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top main-sidebar" id="mainNav">
+    <a class="navbar-brand" href="home.html"><i class="fa fa-fw fa-home"></i>HOME</a></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+	   
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+	    <li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans">
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="home.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Intranet</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">
+			<li><a href="calendarMeetings.html"><i class="fa fa-circle-o"></i> Calendar View</a></li>
+			<li><a href="viewMeetingsRoom.html"><i class="fa fa-circle-o"></i> Meeting Rooms</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+			  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+				<i class="fa fa-circle-o"></i> 
+				<span class="nav-link-text">List Meetings</span> 
+			  </a>
+			  <ul class="sidenav-third-level collapse" id="collapseMulti">
+				<li>
+				  <a href="upcomingMeetings.html#upcomingMeetings"><i class="fa fa-circle-o"></i> Upcoming Meetings</a>
+				</li>
+				<li>
+				  <a href="upcomingMeetings.html#pastMeetings"><i class="fa fa-circle-o"></i> Past Meetings</a>
+				</li>
+			   </ul>
+			</li> 
+            <li><a href="newMeeting.html"><i class="fa fa-circle-o"></i> Create New Meeting</a></li>
+          </ul>
+        </li>
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Weekly Contributions</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o"></i> List Contributions</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">
+            <li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Calendar View</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Listing</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Calendar View (Custodians)</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Listing (Custodians)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Project Management</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Development</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Testing</span>
+          </a>
+        </li>
+      </ul>
+	   
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+	    <li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+        <!--
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-envelope"></i>
+            <span class="d-lg-none">Messages
+              <span class="badge badge-pill badge-primary">12 New</span>
+            </span>
+            <span class="indicator text-primary d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>David Miller</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>Jane Smith</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>John Doe</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all messages</a>
+          </div>
+        </li>
+        -->
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">Wilson</span></a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Profile</h6>
+            <!--<div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+               
+            </a>-->
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+ 
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <div class="content_header">
+		<h1>Dashboard</h1>
+		<ol class="breadcrumb">
+			<li><i class="fa fa-fw fa-home"></i> Home</li>
+			<li><a href="home.html" class="active">Dashboard</a></li>
+		</ol>
+	  </div> 
+     
+      <div style="height: 1170px;">
+			
+			<div class="row">
+				<div class="col-md-3">
+					<div class="info-box">
+						<span class="info-box-icon"><img src="assets/img/pic_img/PROT-04-07B_1.png"></span>
+
+						<div class="info-box-content">
+						  <span class="info-box-text"><strong>BioTrans<br>Meeting Room</strong></span>
+						  <span class="info-box-number">#04-07B (6 <small> Seating</small>)</span>
+						</div>
+ 					</div>
+ 				</div>
+				
+				<div class="col-md-3">
+					<div class="info-box">
+						<span class="info-box-icon"><img src="assets/img/pic_img/PROT-04-19_1.png"></span>
+
+						<div class="info-box-content">
+						  <span class="info-box-text"><strong>BioTrans<br>Meeting Room</strong></span>
+						  <span class="info-box-number">#04-19 (14 <small>Seating</small>)</span>
+						</div>
+ 					</div>
+ 				</div>
+				
+				
+				<div class="col-md-3">
+					<div class="info-box">
+						<span class="info-box-icon"><img src="assets/img/pic_img/PROT-04-08C_1.png"></span>
+
+						<div class="info-box-content">
+						  <span class="info-box-text"><strong>Proteos<br>Conference Room</strong></span>
+						  <span class="info-box-number"> #04-08C (11 <small>Seating</small>)</span>
+						</div>
+ 					</div>
+ 				</div>
+				
+				<div class="col-md-3">
+					<div class="info-box">
+						<span class="info-box-icon"><img src="assets/img/pic_img/PROT-04-19A_1.png"></span>
+
+						<div class="info-box-content">
+						  <span class="info-box-text"><strong>Proteos<br>Conference Room</strong></span>
+						  <span class="info-box-number">#04-19A (18 <small>Seating)</small></span>
+						</div>
+ 					</div>
+ 				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="box box-solid">
+						<div class="box-header with-border">
+						  <h4 class="box-title">Project Type</h4>
+						</div>
+						<div class="box-body">
+							<!-- the events -->
+							<div id="external-events">
+								<div class="external-event bg-green text-white bg-meeting-1">Brain Storming</div>
+								<div class="external-event bg-teal text-white bg-meeting-2">Monthly BioTrans Meeting</div>
+								<div class="external-event bg-blue text-white bg-meeting-3">Project</div>
+								<div class="external-event bg-purple text-white bg-meeting-4">Workgroup</div>								
+								<div class="external-event bg-orange text-white bg-meeting-5">Safety</div>	 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="box box-primary">
+						<div class="box-body">
+					 
+							<!-- THE CALENDAR START HERE -->
+							<div id="calendar"></div>
+							<!-- THE CALENDAR END HERE -->
+						</div>
+					</div>
+				</div>
+			</div>
+			 
+	  
+	  </div>
+	  
+    </div>
+</div>
+</section>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          Copyright &copy; Your Website 2018
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/perfect-scrollbar.min.js"></script>
+<script src="assets/js/vendor/moment.js"></script>
+<script src="assets/js/vendor/fullcalendar.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+<script>
+  $(function () {
+	/* initialize the external events
+     -----------------------------------------------------------------*/
+    function init_events(ele) {
+      ele.each(function () {
+
+        // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+        // it doesn't need to have a start or end
+        var eventObject = {
+          title: $.trim($(this).text()) // use the element's text as the event title
+        }
+
+        // store the Event Object in the DOM element so we can get to it later
+        $(this).data('eventObject', eventObject)
+
+        // make the event draggable using jQuery UI
+        $(this).draggable({
+          zIndex        : 1070,
+          revert        : true, // will cause the event to go back to its
+          revertDuration: 0  //  original position after the drag
+        })
+
+      })
+    }
+
+    init_events($('#external-events div.external-event'))
+	
+	/* initialize the calendar
+     -----------------------------------------------------------------*/
+    //Date for the calendar events (dummy data)
+	
+    var date = new Date()
+    var d    = date.getDate(),
+        m    = date.getMonth(),
+        y    = date.getFullYear()
+    $('#calendar').fullCalendar({
+      header    : {
+        left  : 'prev,next today',
+        center: 'title',
+        right : 'month,agendaWeek,agendaDay'
+      },
+      buttonText: {
+        today: 'today',
+        month: 'month',
+        week : 'week',
+        day  : 'day'
+      },
+      //Random default events
+      events    : [
+        {
+          title          : 'Project Meeting 1',
+          start          : new Date(y, m, 1),
+          backgroundColor: '#ff6700',  
+          borderColor    : '#ff6700' 
+        },
+        {
+          title          : 'Long Event',
+          start          : new Date(y, m, d - 5),
+          end            : new Date(y, m, d - 2),
+          backgroundColor: '#00a65a', //yellow
+          borderColor    : '#00a65a' //yellow
+        },
+        {
+          title          : 'Meeting',
+          start          : new Date(y, m, d, 10, 30),
+          allDay         : false,
+          backgroundColor: '#20c997 ', //teal
+          borderColor    : '#20c997 ' //teal
+        },
+        {
+          title          : 'Lunch',
+          start          : new Date(y, m, d, 12, 0),
+          end            : new Date(y, m, d, 14, 0),
+          allDay         : false,
+          backgroundColor: '#0277bd', //Info (aqua)
+          borderColor    : '#0277bd' //Info (aqua)
+        },
+        {
+          title          : 'Birthday Party',
+          start          : new Date(y, m, d + 1, 19, 0),
+          end            : new Date(y, m, d + 1, 22, 30),
+          allDay         : false,
+          backgroundColor: '#6f42c1', //Success (green)
+          borderColor    : '#6f42c1' //Success (green)
+        },
+        {
+          title          : 'Project Management',
+          start          : new Date(y, m, 28),
+          end            : new Date(y, m, 29),
+          url            : 'http://google.com/',
+          backgroundColor: '#6f42c1', //Primary (light-blue)
+          borderColor    : '#6f42c1' //Primary (light-blue)
+        }
+      ],
+      editable  : true,
+      droppable : true, // this allows things to be dropped onto the calendar !!!
+      drop      : function (date, allDay) { // this function is called when something is dropped
+
+        // retrieve the dropped element's stored Event Object
+        var originalEventObject = $(this).data('eventObject')
+
+        // we need to copy it, so that multiple events don't have a reference to the same object
+        var copiedEventObject = $.extend({}, originalEventObject)
+
+        // assign it the date that was reported
+        copiedEventObject.start           = date
+        copiedEventObject.allDay          = allDay
+        copiedEventObject.backgroundColor = $(this).css('background-color')
+        copiedEventObject.borderColor     = $(this).css('border-color')
+
+        // render the event on the calendar
+        // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+        $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)
+
+        // is the "remove after drop" checkbox checked?
+        if ($('#drop-remove').is(':checked')) {
+          // if so, remove the element from the "Draggable Events" list
+          $(this).remove()
+        }
+
+      }
+    })
+  });
+  /*
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '2018-06-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2018-06-01',
+        },
+        {
+          title: 'Long Event',
+          start: '2018-06-07',
+          end: '2018-06-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-03-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-03-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2018-03-11',
+          end: '2018-03-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2018-03-12T10:30:00',
+          end: '2018-03-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2018-03-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2018-03-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2018-03-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2018-03-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2018-03-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2018-03-28'
+        }
+      ]
+    });
+
+  });
+*/
+</script> 
+</body>
+</html>

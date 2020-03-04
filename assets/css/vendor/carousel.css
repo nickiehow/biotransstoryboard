@@ -1,0 +1,175 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+
+.pcc-panel-title>a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.pcc-panel-title>a:link {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 0rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.carousel-inner{
+  width:100%;
+  max-height: 405px !important;
+}
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 22rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 22rem;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  min-height: 405px;    /* Set slide height here */
+
+}
+img {
+    vertical-align: middle;
+}
+hr, img, legend {
+    border: 0;
+}
+/** */
+.panel-group {
+    margin-bottom: 20px;
+}
+.panel-body {
+    padding: 10px 0;
+}
+.panel-body .row {padding:0px; margin-bottom:0; margin-right: 0px; margin-left: 0px;}
+.pcc-panel-default>.pcc-panel-heading {
+	background: #0277bd;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+	color:#fff;
+}
+.panel-default>.panel-heading {
+	background: #0277bd;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+	color:#fff;
+}
+.pcc-panel-title>a.collapsed {
+    background: url(../img/down.png) right 1.4em center no-repeat #0277bd;
+}
+.pcc-panel-title>a {
+    background: url(../img/up.png) right 1.4em center no-repeat #0277bd;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.panel-heading>.dropdown .dropdown-toggle, .panel-title, .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a {
+    color: inherit;
+}
+
+
+.panel-heading>.dropdown .dropdown-toggle, .panel-title, .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a {
+    color: inherit;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+[role=button] {
+    cursor: pointer;
+}
+
+.panel-group .panel-heading, .panel>.table-bordered>tbody>tr:first-child>td, .panel>.table-bordered>tbody>tr:first-child>th, .panel>.table-bordered>tbody>tr:last-child>td, .panel>.table-bordered>tbody>tr:last-child>th, .panel>.table-bordered>tfoot>tr:last-child>td, .panel>.table-bordered>tfoot>tr:last-child>th, .panel>.table-bordered>thead>tr:first-child>td, .panel>.table-bordered>thead>tr:first-child>th, .panel>.table-responsive>.table-bordered>tbody>tr:first-child>td, .panel>.table-responsive>.table-bordered>tbody>tr:first-child>th, .panel>.table-responsive>.table-bordered>tbody>tr:last-child>td, .panel>.table-responsive>.table-bordered>tbody>tr:last-child>th, .panel>.table-responsive>.table-bordered>tfoot>tr:last-child>td, .panel>.table-responsive>.table-bordered>tfoot>tr:last-child>th, .panel>.table-responsive>.table-bordered>thead>tr:first-child>td, .panel>.table-responsive>.table-bordered>thead>tr:first-child>th {
+    border-bottom: 0;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+/* HOME CONTENT
+-------------------------------------------------- */
+.caption {color:#233E67;}
+.pcc-accordion-image, .pcc-multiitem-image {
+    border: 1px solid #696969;
+}
+.pcc-accordion-text {
+    font-size: 14px;
+}
+.pcc-accordion-text:hover {color:#000;}
+/* Center align the text within the three columns below the carousel */
+.home .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.home h2 {
+  font-weight: 400;
+}
+.home h4 {
+  font-weight: bold;
+  color:#fff;
+}
+.home .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}

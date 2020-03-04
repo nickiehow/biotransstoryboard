@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<!-- Wrapper start default height 100% -->
+<div class="wrapper bg-blue">
+  <!-- Main Content Header start default height 50px -->
+  <header class="main-content-header">
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="index.html"><i class="fa fa-fw fa-home"></i>HOME</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+            
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                     <a class="nav-link" href="/"><i class="fa fa-fw fa-home"></i> Home <span class="sr-only">(current)</span></a> 
+                    </li>
+                </ul> 
+                <a href="login.html" class="btn btn-primary my-2 my-sm-0 bold"><i class="fa fa-fw fa-sign-in"></i> Login</a> 
+                
+            </div>
+	</nav>
+  </header>
+  <!-- Main Content Header end default height 50px -->
+  <main role="main">
+	<!-- Main Container Start here default height 500px -->
+	<div class="main-content-wrapper">
+	
+		<div class="main-container">
+			<!-- navigation start here -->
+			<div class="nav-container left bg-blue">
+				
+				
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+				aaa
+				</div>
+				
+				
+				
+			</div>
+			<!-- navigation end here -->
+			
+			<section class="right-container right bg-light-grey">
+				<div class="row">
+					<div class="col-lg-12 col-xs-6">
+					      
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+
+					</div>
+				</div>
+			</section>
+			
+		</div>
+		 
+	</div>	
+	<!-- Main Container End here -->
+  </main>
+  <!-- Main Footer here default height 56px Start here -->
+  <footer class="main-content-footer">
+	<div class="main-footer">
+		<div class="footer-left left gradient_navy_blue">1
+		</div>
+		<div class="copyright hidden-xs">
+		  Copyright
+		</div>
+     
+	</div>
+  </footer>
+  <!-- Main Footer here default height 56px End here -->
+</div>
+<!-- Wrapper end here -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+<script>
+(function($) {
+ 
+	reSizePage();
+	$(window).resize(function() {
+		reSizePage();
+	}); 
+	function reSizePage() {
+        /*var ht = $(window).height(), wt = $(window).width();
+        var hRate = ht / 768, hRate1 = 768 / 1024, wRate = wt / 1024, mRate = 1024 / wt, whRate = 1052 / 768, mhRate = 768 / 1024, lRate1 = 114 / 1252, lRate2 = 114 / 768, mRate1 = 1024 / 1252, mRate2 = 1024 / 768;
+        if (navigator.userAgent.match(/iPad/i)) {
+		} else {
+		}*/
+	
+		var setHeight     = 0;
+		var footerHeight  = $(".main-footer").height();
+		var headerHeight  = $(".main-content-header").height();
+		var contentHeight = $(".main-content-wrapper").height();
+		var neg 		  = headerHeight + footerHeight + 1;
+		var wrapperHeight = $(".wrapper").height();
+		var windowHeight  = $(window).height();
+		var windowWidth   = $(window).width();
+		console.log ("windowWidth " + windowWidth + " contentHeight " + contentHeight + "neg " + neg + "footerHeight " + footerHeight + " window height is " + windowHeight + " wrapper ht "+wrapperHeight + " content height " +headerHeight);
+		if(windowHeight > wrapperHeight) {   
+			//$(".main-content-wrapper").css("height", "575px");
+			contentHeight = windowHeight - neg;
+			$(".wrapper").css({"height": windowHeight + "px"});
+			$(".main-container").css({"height": windowHeight-neg + "px"});
+			$(".main-footer").css({"height": footerHeight + "px"});
+			setHeight = contentHeight;
+			console.log ("windowHeight >= wrapperHeight | window height is " + windowHeight + " wrapper ht "+wrapperHeight);
+		} else {
+			$(".wrapper").css('height', wrapperHeight);
+			$(".main-footer").css({"height": footerHeight + "px"});
+			$(".main-container").css('height', wrapperHeight);
+			setHeight = wrapperHeight;
+			console.log ("windowHeight < wrapperHeight | window height is " + windowHeight + " wrapper ht "+wrapperHeight);
+		}
+	}	 
+	 
+	
+	// Accordion Toggle Items
+	/*var iconOpen = 'fa fa-minus',
+		iconClose = 'fa fa-plus';
+
+	$(document).on('show.bs.collapse hide.bs.collapse', '.accordion', function (e) {
+		var $target = $(e.target)
+		$target.siblings('.accordion-heading')
+		.find('em').toggleClass(iconOpen + ' ' + iconClose);
+		if(e.type == 'show')
+			$target.prev('.accordion-heading').find('.accordion-toggle').addClass('active');
+			if(e.type == 'hide')
+				$(this).find('.accordion-toggle').not($target).removeClass('active');
+	});*/
+	
+ 
+})(jQuery);
+</script>
+  
+</body>
+</html>

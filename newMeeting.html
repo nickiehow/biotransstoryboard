@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html"><i class="fa fa-fw fa-home"></i>HOME</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav navbar-sidebar" id="exampleAccordion">
+	    <li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans" />
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="home.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Intranet">
+          <span class="nav-link">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Intranet</span>
+          </span>
+        </li>
+ 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">
+			<li><a href="calendarMeetings.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="viewMeetingsRoom.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Meeting Rooms</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+			  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+				<i class="fa fa-circle-o" style="font-size: 8px;"></i> 
+				<span class="nav-link-text">List Meetings</span>
+			  </a>
+			  <ul class="sidenav-second-level collapse" id="collapseMulti">
+				<li>
+				  <a href="upcomingMeetings.html">Upcoming Meetings</a>
+				</li>
+				<li>
+				  <a href="#">Past Meetings</a>
+				</li>
+			   </ul>
+			</li> 
+            <li><a href="newMeeting.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Create New Meeting</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Weekly Contributions</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> List Contributions</a>
+            </li>
+          </ul>
+        </li>
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">
+            <li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View (Custodians)</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing (Custodians)</a></li>
+          </ul>
+        </li>
+       </ul>
+      
+	  <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+	  
+      <ul class="navbar-nav ml-auto">
+
+		<li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">Wilson</span></a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Profile</h6>
+            <!--<div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+               
+            </a>-->
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+     
+	</div>
+</nav>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+	  <div class="content_header">
+		<h1>Create Meeting</h1>
+		<ol class="breadcrumb">
+			<li><i class="fa fa-fw fa-home"></i>  Meeting Minutes</li>
+			<li>Create Meeting</li>
+			<li><a href="newMeeting.html" class="active">Create Meeting</a></li>
+		</ol>
+	  </div> 
+      
+	  
+ 
+	  <!-- Stepper -->
+
+	  <div class="row">
+        <div class="col-md-12">
+			
+			<div id="booking-progress" class="hb-progress-tracker">
+				<ul class="hb-progress-bar" role="tablist">
+					<li class="hb-step-tabs active hb-first">
+						<a href="newMeeting.html#basic_info" title="Create Meeting"><span>1</span>Basic Info</a>
+						<div class="step"></div>
+					</li>
+					<li class="hb-step-tabs disabled"><!--active current-->
+						<a href="javascript:void(0)" title="Add Agendas"><span>2</span>Agendas</a>
+						<div class="step"></div>
+					</li>
+					<li class="hb-step-tabs disabled"> 
+						<a href="javascript:void(0)" title="Add Agendas"><span>3</span>Invitees</a>
+						<div class="step"></div>
+					</li>
+					<li class="hb-step-tabs services">
+						<a href="javascript:void(0)" title="Add Invitees"><span>3</span>Invitees</a>
+ 						<div class="step"><div class="substep"></div><span class="dot"></span><span class="dot"></span><span class="dot"></span></div> 
+					</li>
+					<li class="hb-step-tabs">
+						<a href="javascript:void(0)" title="Add Attendees"><span>4</span>Attendees</a><div class="step"></div>
+					</li>
+					<li class="hb-step-tabs">
+						<a href="javascript:void(0)" title="Add Actions"><span>5</span>Actions</a><div class="step"></div>
+					</li>
+					<li class="hb-step-tabs hb-last" title="Upload File Attachments"><a href="javascript:void(0)"><span></span>File Attachments</a><div class="step"></div></li>
+				</ul>
+			</div>
+			
+		</div>
+	  </div>
+	  
+	 
+	  <div class="row">
+        <div class="col-xl-12 col-sm-12 mb-3">
+		<div class="tab-content">
+          <div class="tab-pane active" role="tabpanel" id="basic_info">
+		    
+			<div class="card text-black bg-lightgrey o-hidden h-100">
+		    <div class="card-header card-title">
+				<i class="fa fa-fw fa-edit"></i> Step 1 - Create Meeting
+			</div>
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-tasks"></i>
+              </div>
+              <div class="mr-3">
+				<!-- Form Start -->
+				 
+					
+				
+						<form method="POST" action="newAgendas.html">
+
+ 						<div class="row">
+							<div class="col-md-8 mb-3">
+ 								<label for="title">Title</label>
+								<input type="text" class="form-control" name="title" id="title" placeholder="" value="Project Development Testing 2" required>
+  								<div class="invalid-feedback">
+									Title cannot be blank
+								</div>
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="chairperson">Meeting Initiator</label>
+								<input type="text" class="form-control" name="chairperson" id="chairperson" placeholder="" value="Wilson" required readonly="">
+ 							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 mb-3">
+								<label for="description">Description</label>
+								<textarea id="description" name="description" class="form-control" required>Project Development Testing 2</textarea>
+								<div class="invalid-feedback">
+									Description cannot be blank
+								</div>
+							</div>
+						</div> 
+						<div class="row">
+							<div class="col-md-3 mb-3">
+								<label for="meeting_selection">Meeting Type</label>
+								<select id="meeting_selection" name="type" class="form-control initialized">
+										<option value="" disabled="" selected="">Choose option</option>
+										<option value="1" selected>Brain Storming</option>
+										<option value="3">Monthly BioTrans Meeting</option>
+										<option value="6">Project</option>
+										<option value="7">Workgroup</option>
+										<option value="8">Safety</option>
+								</select>
+								<!--<input type="text" class="form-control w-50 md-datepicker-triangle-button md-icon-button md-button" name="jobDate" id="jobDate" data-provide="datepicker" placeholder="Selected Date" value="" required /> -->
+								<div class="invalid-feedback">
+									Please select Meeting Type.
+								</div>
+							</div>
+							<div class="col-md-3 mb-3">
+								<label for="location">Meeting Location</label>
+								<select id="location" name="location" class="form-control select">
+									<option value="" disabled="" selected="">Choose option</option>
+									<option value="PROT_04-07B" selected>BioTrans Meeting Room #04-07B - 6 seats</option>
+									<option value="PROT_04-19">Proteos #04-19 BioTrans Conference Room - 14 seats</option>
+									<option value="PROT_04-08C">Proteos Level 4 Conference Room #04-08C - 11 seats</option>
+ 									<option value="PROT_04-19A">Proteos Level 4 Conference Room #04-19A - 18 seats</option>
+									<option value="OTHERS">Others</option>
+								</select>
+								<div class="invalid-feedback">
+									Please select Meeting Location
+								</div>
+							</div>
+							<div class="col-md-2 mb-3">
+ 								<div class="form-group">
+									<label for="meeting_dt">Meeting Date</label>
+									<div class="input-group">
+ 									<input type="text" class="form-control" name="meeting_dt" id="meeting_dt" placeholder="Meeting Date" required>
+									<div class="input-group-addon"><i class="fa fa-fw fa-calendar open-datetimepicker"  style="font-size:20px"></i></div>
+									
+									</div>  
+ 								</div>
+ 								<div class="invalid-feedback">
+									Select a meeting date
+								</div>
+ 							</div>
+							<div class="col-md-2 mb-3">
+								<label for="start_time">Start Time</label>
+								<select id="start_time" name="start_time" class="form-control initialized">
+									<option value="09:30">09:30</option>
+									<option value="10:00">10:00</option>
+									<option value="10:30">10:30</option>
+									<option value="11:00">11:00</option>
+									<option value="11:30">11:30</option>
+									<option value="12:00">12:00</option>
+									<option value="12:30">12:30</option>
+									<option value="13:00">13:00</option>
+									<option value="13:30">13:30</option>
+									<option value="14:00">14:00</option>
+									<option value="14:30">14:30</option>
+									<option value="15:00">15:00</option>
+									<option value="15:30">15:30</option>
+									<option value="16:00">16:00</option>
+									<option value="16:30">16:30</option>
+									<option value="17:00">17:00</option>
+									<option value="17:30">17:30</option>
+									<option value="18:00">18:00</option>
+								</select>
+ 								<span class="add-on"><i class="icon-time"></i></span>
+								<div class="invalid-feedback">
+									Valid Time is required.
+								</div>
+							</div>
+							<div class="col-md-2 mb-3">
+							    <label for="end_time">End Time</label>
+								<select id="end_time" name="end_time" class="form-control initialized">
+									<option value="09:30">09:30</option>
+									<option value="10:00">10:00</option>
+									<option value="10:30" selected>10:30</option>
+									<option value="11:00">11:00</option>
+									<option value="11:30">11:30</option>
+									<option value="12:00">12:00</option>
+									<option value="12:30">12:30</option>
+									<option value="13:00">13:00</option>
+									<option value="13:30">13:30</option>
+									<option value="14:00">14:00</option>
+									<option value="14:30">14:30</option>
+									<option value="15:00">15:00</option>
+									<option value="15:30">15:30</option>
+									<option value="16:00">16:00</option>
+									<option value="16:30">16:30</option>
+									<option value="17:00">17:00</option>
+									<option value="17:30">17:30</option>
+									<option value="18:00">18:00</option>
+								</select>
+							</div>
+ 						</div>
+						<!-- Row 05: Project Row Items -->		
+						<div id="project_section" class="row hiddenSection" style="display: none;">
+							
+							<div class="col-md-3 mb-3" > 
+								<label for="proj_id">Project</label>
+								<select id="proj_id" name="proj_id" class="form-control initialized">
+ 									<option value="0" disabled selected>Choose option</option>
+									<option value="2">Project Testing</option>
+								</select>
+							</div>
+							<div class="col-md-3 mb-3"> 
+								<label for="previous_project_meeting_id">Previous Meeting Follow-Up</label>
+								<select id="previous_project_meeting_id" name="previous_project_meeting_id" class="form-control initialized">
+ 									<option value="0" selected="">None</option>
+									<option value="1">Project Meeting 1</option>
+									<option value="2">Project</option>
+									<option value="3">Testing</option>
+									<option value="4">Testing</option>
+								</select>
+							</div>
+						</div>
+						<div id="nonproject_section" class="row">
+							<!--  Row 05: Non-Project Row Items -->
+							<div class="col-md-3 mb-3" style="display: block;"> 
+								<label for="previous_meeting_id">Previous Meeting Follow-Up</label>
+								<select id="previous_meeting_id" name="previous_meeting_id" class="form-control initialized">
+ 									<option value="0" selected="">None</option>
+									<option value="1">Project Meeting 1</option>
+									<option value="2">Project</option>
+									<option value="3">Testing</option>
+									<option value="4">Testing</option>
+								</select>
+							</div>
+						</div>
+					    <div class="row">
+							<div class="col-md-6 mb-3">
+								 
+							</div>
+							<div class="col-md-6 mb-3">
+								 
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 mb-3">
+								<button class="btn btn-primary btn-lg btn-block" type="submit">Create Meeting</button>
+							</div>
+							<div class="col-md-3 mb-3">
+								<!--<button class="btn btn-primary btn-lg btn-block" type="submit" disabled>Next</button>-->
+							</div>
+							<div class="col-md-3 mb-3"></div>
+							<div class="col-md-3 mb-3">
+								<button type="button" class="btn btn-primary btn-lg  btn-block btn-right" onclick="location.href='upcomingMeetings.html'">Go Back</button>
+								
+							</div>
+						</div>
+						 
+						<div class="pad margin no-print">
+							<div class="callout callout-info" style="margin-bottom: 0!important;" role="callout">
+								<h4><i class="fa fa-info"></i> Note:
+								<button type="button" class="close" data-dismiss="callout" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								</h4>
+								Check availability amd manually note down on the booking sheet at the room door first, before sending this LIMS booking
+								
+							</div>
+						</div>
+						 
+					</form>
+				
+				
+				
+				
+				<!-- Form End -->
+			  </div>
+            </div>
+          
+          </div>
+        
+		  </div>
+          <div class="tab-pane" role="tabpanel" id="add_agendas">
+		  a
+		  </div>
+		</div>
+		<!--End tab-content-->
+		
+		</div>
+      </div>
+	  <!-- End Template here -->
+	   
+ 	 
+	</div>
+    <!-- End /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright &copy; Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Start Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+</body>
+</html>

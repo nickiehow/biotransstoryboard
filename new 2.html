@@ -1,0 +1,720 @@
+
+
+
+ 
+
+
+
+
+<!DOCTYPE html>
+<html  lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="_csrf" content="5c616926-e4eb-491b-b2f9-460b5c39b21b"/>
+<meta name="_csrf_header" content="X-CSRF-TOKEN"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS View Project</title>
+<link rel="icon" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="fixed-nav" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+<style>
+
+.tabs {
+	 
+	border-radius: 8px;
+	box-shadow: 8px 8px 3px #b3aaaa;
+}
+
+.tabs .tab a {
+	color: black;
+	background-color: #9bd997;
+}
+
+.tabs .tab a:hover {
+	color: blue;
+}
+
+#project_notify {
+	animation: blinker 1s linear infinite;
+}
+</style>
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top main-sidebar" id="mainNav">
+    <a class="navbar-brand" href="/"><i class="fa fa-fw fa-home"></i>HOME</a> 
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+ 
+	
+		
+		
+		
+		
+		
+		
+			
+		
+	
+
+	
+		
+		
+		
+			
+		
+		
+		
+		
+	
+
+	
+		
+		
+			
+		
+		
+		
+		
+		
+	
+
+	
+		
+		
+		
+		
+			
+		
+		
+		
+	
+
+	
+		
+		
+		
+		
+		
+			
+		
+		
+	
+
+	
+		
+		
+		
+		
+		
+		
+	
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+	  <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+		<li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans">
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="/home">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="/">
+            <i class="fa fa-fw fa-info-circle"></i>
+            <span class="nav-link-text">Intranet</span>
+          </a>
+        </li>
+   		<!-- Meetings -->
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">						
+			<li><a href="/calendarMeetings"><i class="fa fa-circle-o"></i> Calendar View</a></li>
+			<li><a href="/viewMeetingsRoom"><i class="fa fa-circle-o"></i> Meeting Rooms</a></li>
+			<li><a href="/listMeetings"><i class="fa fa-circle-o"></i> List Meetings</a></li>			 
+            <li><a href="/newMeeting"><i class="fa fa-circle-o"></i> Create Meeting</a></li>
+          </ul>
+        </li>
+	    <!-- Projects -->
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="/projectWorkLoadAssignment"><i class="fa fa-circle-o"></i> Weekly Contributions</a>
+            </li>
+            
+				<li><a href="/projectWorkLoadListing"><i class="fa fa-circle-o"></i> List Contributions</a></li>
+			
+          
+          </ul>
+        </li>	
+        <!-- Instruments -->
+        
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">          
+            <li>
+              <a href="/calendarInstrumentsBooking"><i class="fa fa-circle-o"></i> Calendar View</a>
+            </li>
+            <li>
+              <a href="/listInstrumentsBooking"><i class="fa fa-circle-o"></i> Listing</a>
+            </li>
+            <!-- 
+            <li>
+              <a href="/newInstrumentBooking"><i class="fa fa-circle-o"></i> Create New</a>
+            </li>-->
+            
+            <li>
+              <a href="/calendarInstrumentsBookingCustodian"><i class="fa fa-circle-o"></i> Calendar View (Custodians)</a>
+            </li>
+             <li>
+              <a href="/listCustodianInstrumentsBooking"><i class="fa fa-circle-o"></i> Listing (Custodians)</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <!-- Chemical Inventory -->
+        
+        <!-- Project Management -->
+		
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Project Management">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjectManagement" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Project Management</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjectManagement">
+            <li>
+              <a href="/listProjects"><i class="fa fa-circle-o"></i> Project Listing</a>
+            </li>
+            <li>
+              <a href="/newProject"><i class="fa fa-circle-o"></i> Create New Project</a>
+            </li>          
+          </ul>
+        </li>	
+         
+        <!-- Development -->
+        
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Development">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseDevelopment" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-bars"></i>
+            <span class="nav-link-text">Development Items</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseDevelopment">
+            <li>
+              <a href="/showBarChart"><i class="fa fa-circle-o"></i> Show Bar Chart</a>
+            </li>          
+          </ul>
+        </li>	 
+			 
+      </ul> 
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+	    <li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">wilson</span> 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">User Profile</h6>
+             <div class="dropdown-divider"></div>
+	            <a class="dropdown-item" href="/userProfile">
+	              <span class="text-success">
+	                <strong>
+	                  <i class="fa fa-long-arrow-up fa-fw"></i>Profile Update</strong>
+	              </span>
+	               
+	            </a> 
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#logoutModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+		<!-- Breadcrumbs-->
+		<div class="content_header">
+			<h1>View Project</h1>
+			<ol class="breadcrumb">
+				<li><i class="fa fa-fw fa-tasks"></i> Project Management</li>
+				<li><a href="/listProjects">List of Projects</a></li>				
+				<li><a href="/listProjects" class="active">Project Testing</a></li>
+			</ol>
+		</div> 
+		<!-- Main Content Start -->
+		<div class="main-content" style="min-height: 870px;">
+
+ 
+			<!-- Main Contents -->
+			 
+			<div class="row">
+				<div class="col-md-12">
+				  <!-- Custom Tabs Start -->
+				  <div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+					  <li class="active"><a href="#tab_1" data-toggle="tab">Basic Info</a></li>
+					  <li><a href="#tab_2" data-toggle="tab">Project Members</a></li>
+					 
+					   
+					</ul>
+					<div class="tab-content">
+					  <div class="tab-pane active" id="tab_1">
+						
+							111
+						 
+					  </div>
+					  <!-- /.tab-pane -->
+					  <div class="tab-pane" id="tab_2">
+						222
+					  </div>
+					   
+					   
+					</div>
+					
+				  </div>
+				  <!-- Custom Tabs End -->
+			</div>
+		
+			<div class="row">
+				<div class="col-xl-12 col-sm-12 mb-3">
+					<div class="card text-black bg-lightgrey">
+						<div class="card-header card-title">
+							<i class="fa fa-fw fa-edit"></i> Update Project
+						</div>
+						<div class="card-body">
+	 					  <div class="mr-1 ml-1">
+		 					  <!-- Form Message Start -->
+							  
+
+<!-- User Profile -->
+		
+<!-- Weekly Contributions -->
+
+<!-- View Project -->
+
+ 
+<!-- Upcoming Meetings
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		Record was successfully deleted
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div> 
+-->		  
+							  <!-- Form Message End -->
+							  
+							  <!-- Form Start Basic Info -->
+							  	<div id="basic_info">
+							  		<div class="row">
+							  			<div class="col-md-12">
+											<ul class="tabs">
+												<li class="tab col-md-3"><a href="#basic_info">Basic Info</a></li>
+												
+													
+													
+														<li class="tab col-md-3"><a href="#add_members">Project Members</a></li>
+													
+												
+											</ul>				
+										</div>
+							  		</div>
+							  		<form id="project" action="/updateProject" method="POST">		
+										 
+										<!-- Row 01 -->
+										<div class="row">
+											<!-- Title -->
+											<div class="col-md-8 mb-3">
+											    <label for="title">Title</label>
+												<input id="title" name="title" placeholder="Project Title" type="text" class="form-control validate" required="required" value="Project Testing"/> 
+												<div class="error-feedback">
+													
+												</div>
+											</div>
+											<!-- Code -->
+											<div class="col-md-4 mb-3">
+											    <label for="code">Code</label>
+												<input id="code" name="code" placeholder="Project Code" type="text" class="form-control" required="required" value="ABZ0000-01"/>
+												<div class="error-feedback">
+													
+												</div>
+											</div>
+										</div>
+										<!-- Row 02 -->
+										<div class="row">				 
+											<!-- Summary -->
+											<div class="col-md-12">
+												<label for="description">Description</label>
+												<textarea id="description" name="description" class="form-control">Project Testing</textarea> 
+												<div class="error-feedback">
+													
+												</div>
+											</div>
+										</div> 
+										
+										<!-- Row 03: Row Items -->
+										<div id="meeting_parts" class="row">
+											<!-- Project Status Dropdown -->
+											<div class="col-md-2 mt-3">
+												<label for="status">Status</label>
+												<select id="status" name="status" class="form-control">
+														<option value="1">Active</option>
+												</select>
+												<div class="error-feedback">
+												
+												</div>
+											</div>
+											<!-- Project Types Dropdown -->
+											<div class="col-md-4 mt-3">
+												<label for="type">Type</label>
+												<select id="type" name="type" class="form-control">
+													
+													
+													
+														
+															<option value="1" selected>In-house</option>
+														
+														
+													
+													
+													
+														
+														
+															<option value="2">Collaboration</option>
+														
+													
+													
+													
+														
+														
+															<option value="3">Industry</option>
+														
+													
+													
+													
+														
+														
+															<option value="4">Instrument-Maintenance</option>
+														
+													
+													
+												</select>
+												<div class="error-feedback">
+													
+												</div>
+											</div>
+											<!-- Approval Date Picker -->
+											<div class="col-md-2 mt-3">
+												<div class="form-group">
+													<label for="approval_dt">Approval Date</label>
+													<div class="input-group">
+														<input id="approval_dt" name="approval_dt" type="text" class="form-control" required="required" value="25/05/2018"/>
+														<div class="input-group-addon"><i class="fa fa-fw fa-calendar open-approval_dt" id="open-approval_dt" style="font-size:20px"></i></div>
+													</div>
+												</div>
+												<div class="error-feedback">
+													
+												</div>
+											</div>
+											<!-- Start Date Picker -->
+											<div class="col-md-2 mt-3">
+												<div class="form-group">
+													<label for="start_dt">Start Date</label>
+													<div class="input-group">
+														<input id="start_dt" name="start_dt" type="text" class="form-control start_dt" value="25/05/2018"/>
+														<div class="input-group-addon"><i class="fa fa-fw fa-calendar open-start_dt" id="open-start_dt" style="font-size:20px"></i></div>
+													</div>
+													
+												</div>
+												<div class="error-feedback">
+													
+												</div>
+											</div>
+											<!-- End Date Picker -->
+											<div class="col-md-2 mt-3">
+												<div class="form-group">
+													<label for="end_dt">End Date</label>
+													<div class="input-group">
+														<input id="end_dt" name="end_dt" type="text" class="form-control end_dt" value="25/06/2019"/>
+														<div class="input-group-addon"><i class="fa fa-fw fa-calendar open-end_dt" id="open-end_dt" style="font-size:20px"></i></div>
+													</div>
+													<div class="error-feedback">
+														
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<!-- Button -->
+										<div class="row">
+											<input id="id" name="id" hidden="true" type="text" value="2"/>
+											<input type="hidden" name="_csrf" value="5c616926-e4eb-491b-b2f9-460b5c39b21b" />
+											<div class="col-md-12 text-center">
+												<button class="btn btn-primary btn-custom" type="submit">
+													<i class="fa fa-fw fa-arrow-circle-right"></i> Update Project</i>
+												</button>
+											</div>
+										</div>
+										 
+									</form>
+										 
+							  	</div>
+							  <!-- Form End -->
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+ 
+						<div class="row">
+							
+							
+							
+									
+							 
+							<div id="add_members" class="col s12">
+								<div class="row"></div>
+								<div class="row"></div>
+								<div class="row"></div>
+								<div class="row">		
+									<div class="col s1"></div>
+									<div class="col s6">List of staff to be added:</div>
+								</div>
+								<div class="row">
+									<div class="col s1"></div>
+									<div id="all_members" class="col s11">
+										
+											<div id="dummy_user3" class="chip" onclick="addMember('dummy_user3','Dummy User3')">
+												Dummy User3
+											</div>
+										
+									</div>
+								</div>
+								<div class="row"><div class="col s1"></div></div>
+								<div class="row">		
+									<div class="col s1"></div>
+									<div class="col s6">Current project members:</div>
+								</div>
+								<div class="row">
+									<div class="col s1"></div>
+									<div id="curr_members" class="col s11">
+										
+											<div id="wilson" class="chip" onclick="removeMember('wilson','Wilson Kwo')">
+												Wilson Kwo
+											</div>
+										
+											<div id="dummy_user1" class="chip" onclick="removeMember('dummy_user1','Dummy User1')">
+												Dummy User1
+											</div>
+										
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s1"></div>
+									<div class="col s10">
+										<a class="btn-floating btn-tiny waves-effect waves-light indigo" href="#" onclick="retrieveAllCurrentUsers()">
+										<i class="tiny material-icons">send</i></a> &nbsp;Update Project Members
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+				</div>
+				
+				<form id="vProject" action="/updateProjectMembers" method="POST">
+					<input type="hidden" name="_csrf" value="5c616926-e4eb-491b-b2f9-460b5c39b21b" />
+					<input type="hidden" name="project_id" value="2"/>
+					<input type="hidden" id="listOfUserNames" name="listOfUserNames" value=""/>
+				</form>
+			
+				<!-- End Main Contents -->
+				
+		</div>
+		<!-- End Main Contents -->
+	</div>
+</div>
+   
+    <footer class="sticky-footer">
+      <div class="main-footer container">
+        <div class="text-center">
+          Copyright &copy; Your Website 2018
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="javascript:document.getElementById('logout').submit()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form id="logout" action="/logout" method="POST">
+		<input type="hidden" name="_csrf" value="5c616926-e4eb-491b-b2f9-460b5c39b21b" />
+	</form>
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/perfect-scrollbar.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+<!-- Custom Script Put Here -->
+<script type="text/javascript">
+ 
+    $(window).on('load', function() {
+      
+		var navPillsAdjust = function(){
+			SelectTab(0);
+			$('.nav.nav-tabs').each(function(){
+				var liGroup = $(this).children('li');
+				//console.log( liGroup.length );
+				var liLength= liGroup.length;
+				liGroup.each(function(){
+					var liWidth = 100/liLength-1;
+					$(this).css({'min-width': liWidth+'%','margin-left':'0px','margin-right':'0px'});
+					$(this).click(function(){						 
+						$('li.active').removeClass('active');
+						$(this).addClass("active"); 
+						alert(FindActiveDiv());
+					}); 
+					/*$('li').click(function() {
+						$(this).addClass('active').siblings().removeClass('active');
+					});*/
+				});
+			});
+		};
+		navPillsAdjust();
+
+    });
+	 
+	//tabindex start at 0 
+	function SelectTab(tabindex){	 
+        $('.nav.nav-tabs li ').removeClass('active');
+        $('.nav.nav-tabs li').eq(tabindex).addClass('active');        
+    }
+    function FindActiveDiv(){  
+        var DivName = $('.nav.nav-tabs li.active a').attr('href');  
+        return DivName;
+    }
+    
+</script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').material_select();
+			$('.hiddenSection').hide();
+			$('.showSection').toggleClass('hiddenSection');
+			
+			setTimeout(function() {
+				$('#project_notify').fadeOut('fast');
+			}, 3000);
+		});
+
+		$('.datepicker').pickadate({
+			selectMonths : true, // Creates a dropdown to control month
+			selectYears : 2
+		// Creates a dropdown of 15 years to control year
+		});
+		
+		$('.agendaSection').click(function() {
+			$(this).closest('tr').next('.hiddenSection').toggle('500');
+		});
+		
+		function addMember(alias, person) {
+			$("#curr_members").append("<div id=\"" + alias + "\" class=\"chip\" onclick=\"removeMember('" + alias + "', '" + person + "')\">" + person + "</div>");
+			$("#all_members").find("#" + alias).remove();
+		}
+		
+		function removeMember(alias, person) {
+			$("#all_members").append("<div id=\"" + alias + "\" class=\"chip\" onclick=\"addMember('" + alias + "', '" + person + "')\">" + person + "</div>");
+			$("#curr_members").find("#" + alias).remove();
+		}
+		
+		function retrieveAllCurrentUsers() {
+			var users = [];
+			$("#curr_members").find("div").each(function(){ users.push(this.id); });
+			document.getElementById("listOfUserNames").value = users;
+			document.getElementById("vProject").submit();
+		}
+</script>
+
+<!-- Custom Script End Here -->
+</body>
+</html>

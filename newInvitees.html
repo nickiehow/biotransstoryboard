@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html"><i class="fa fa-fw fa-home"></i>HOME</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav navbar-sidebar" id="exampleAccordion">
+	    <li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans" />
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="home.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Intranet">
+          <span class="nav-link">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Intranet</span>
+          </span>
+        </li>
+ 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">
+			<li><a href="calendarMeetings.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="viewMeetingsRoom.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Meeting Rooms</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+			  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+				<i class="fa fa-circle-o" style="font-size: 8px;"></i> 
+				<span class="nav-link-text">List Meetings</span>
+			  </a>
+			  <ul class="sidenav-second-level collapse" id="collapseMulti">
+				<li>
+				  <a href="upcomingMeetings.html">Upcoming Meetings</a>
+				</li>
+				<li>
+				  <a href="#">Past Meetings</a>
+				</li>
+			   </ul>
+			</li> 
+            <li><a href="newMeeting.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Create New Meeting</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Weekly Contributions</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> List Contributions</a>
+            </li>
+          </ul>
+        </li>
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">
+            <li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View (Custodians)</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing (Custodians)</a></li>
+          </ul>
+        </li>
+       </ul>
+      
+	  <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+	  
+      <ul class="navbar-nav ml-auto">
+
+		<li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">Wilson</span></a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Profile</h6>
+            <!--<div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+               
+            </a>-->
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+     
+	</div>
+</nav>
+<div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+	  <div class="content_header">
+		<h1>Create New Meeting</h1>
+		<ol class="breadcrumb">
+			<li><i class="fa fa-fw fa-home"></i>  Meeting Minutes</li>
+			<li><a href="newMeeting.html">Create New Meeting</a></li>
+			<li><a href="newMeeting.html" class="active">Invitees</a></li>
+		</ol>
+	  </div> 
+      
+	  <!-- Start Create New Meeting -->
+	  
+      <!--<div class="card mb-3">
+        <div class="card-header card-title">
+          <i class="fa fa-fw fa-edit"></i> Step 1 - Create New Meeting
+		</div>
+        <div class="card-body">
+			<div class="card-body-icon">
+                <i class="fa fa-fw fa-tasks"></i>
+			</div>
+			<div class="mr-3">
+			blah blah
+ 			</div>
+        </div>
+      </div>-->
+      <!-- End Create New Meeting -->
+	  <!-- Start Template here -->
+ 
+	  <!-- Stepper -->
+
+	  <div class="row">
+        <div class="col-md-12">
+			
+			<div id="booking-progress" class="hb-progress-tracker">
+				<ul class="hb-progress-bar">
+					<li class="hb-step-tabs active hb-first">
+					    <a href="viewMeeting.html" title="Basic Info">
+						<span>1</span>Basic Info</a>
+						<div class="step done"></div>
+					</li>
+					<li class="hb-step-tabs active"> 
+						<a href="newAgendas.html" title="Add Agendas"><span>2</span>Agendas</a>
+						<div class="step done"></div>
+					</li>
+					<li class="hb-step-tabs active current">
+						<a href="newInvitees.html" title="Add Invitees"><span>3</span>Invitees</a>
+						<div class="step"></div>
+						<!--<div class="step"><div class="substep"></div><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>-->
+					</li>
+					<li class="hb-step-tabs">
+						<a href="javascript:void(0)" title="Add Attendees"><span>3</span>Attendees</a><div class="step"></div>
+					</li>
+					<li class="hb-step-tabs">
+						<a href="javascript:void(0)" title="Add Actions"><span>4</span>Actions</a><div class="step"></div>
+					</li>
+					<li class="hb-step-tabs hb-last" data-toggle="tab" role="tab" title="Upload File Attachments"><a href="javascript:void(0)"><span>5</span>Done - File Attachments</a><div class="step"></div></li>
+				</ul>
+			</div>
+			
+		</div>
+	  </div>
+	  <!--<div class="row">
+        <div class="col-md-12">
+			
+					<ul class="steps hidden" style="width: 100%;">
+					  <li class="active"><a href="">1. - Create Meeting</a></li>
+ 					  <li class="undone"><p>2. - Agendas</p></li>
+					  <li class="undone"><p>3. - Invitees</p></li>
+					  <li class="undone"><p>4. - Actions</p></li>
+					  <li class="done"><p>5. - File Attachments</p></li>
+					</ul>
+ 			 
+		</div>
+	  </div>-->
+	 
+	  <div class="row">
+        <div class="col-xl-12 col-sm-12 mb-3">
+          <div class="card text-black bg-lightgrey o-hidden h-100">
+		    <div class="card-header card-title">
+				<i class="fa fa-fw fa-edit"></i> Step 3 - Invitees
+			</div>
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-tasks"></i>
+              </div>
+              <div class="mr-3">
+				<!-- Form Start -->
+				<div class="container">
+				<form action="" method="post" name="newAttendees" id="newAttendees"> 
+					 
+					<div class="row">
+						<div class="col-md-5 mb-3">
+							<h3><strong>Invite All Potential invitees:</strong></h3>
+						</div>
+						<div class="col-md-2 mb-3"></div>
+						<div class="col-md-5 mb-3">
+						<h3><strong>Removed All Current invitees:</strong></h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-5 col-lg-5">
+ 							<select name="from" id="undo_redo" class="form-control" size="13" multiple="multiple">
+								
+								<option value="1">Dummy User1</option>
+								<option value="2">Dummy User2</option>
+								<option value="3">Dummy User3</option>
+								<option value="4">Dummy User4</option>
+								<option value="5">Dummy User5</option>
+								<option value="6">Dummy User6</option>
+								<option value="7">Dummy User7</option>	
+								
+								<option value="9">Wilson Kwo</option>
+ 								 
+							</select>
+						</div>
+						
+ 
+						<div class="col-2 col-lg-2">
+							<button type="button" id="select_all_attendees" class="btn btn-primary btn-block">Invite All</button>
+							<!--<button type="button" id="undo_redo_undo" class="btn btn-primary btn-block">undo</button>-->
+							<button type="button" id="undo_redo_rightAll" class="btn btn-default btn-block"><i class="fa fa-fw fa-forward"></i></button>
+							<button type="button" id="undo_redo_rightSelected" class="btn btn-default btn-block"><i class="fa fa-fw fa-arrow-right"></i></button>
+							<button type="button" id="undo_redo_leftSelected" class="btn btn-default btn-block"><i class="fa fa-fw fa-arrow-left"></i></button>
+							<button type="button" id="undo_redo_leftAll" class="btn btn-default btn-block"><i class="fa fa-fw fa-backward"></i></button>
+							<!--<button type="button" id="undo_redo_redo" class="btn btn-primary btn-block">redo</button>-->
+							<button type="button" id="unselect_all_attendees" class="btn btn-primary btn-block">Remove All</button>
+						</div>
+						
+						<div class="col-5 col-lg-5">
+							<select name="to" id="undo_redo_to" class="form-control" size="13" multiple="multiple">
+								<option value="8">Dummy User8</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-lg-4 col-xl-4">&nbsp;</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-lg-12">
+							<input type="hidden" name="attendeeslist_value" id="attendeeslist_value"  />
+  							<button type="button" id="updateAttendeesList" name="submit" class="btn btn-primary"><i class="fa fa-fw fa-arrow-circle-right"></i> Update Invitees List</button>
+						</div>
+					</div>
+				</form>
+				
+				<!-- Form End -->
+			  </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+	  <!-- End Template here -->
+	   
+ 	 
+	</div>
+    <!-- End /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright &copy; Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Start Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/multiselect.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.dataTables.js"></script>
+<script src="assets/js/vendor/dataTables.search-highlight.js"></script>
+<script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+<script>
+// Call the dataTables jQuery plugin
+$(document).ready(function() {
+	$('#undo_redo').multiselect();
+	/*$('#undo_redo1').multiSelect({
+      afterSelect: function(values){
+        alert("Select invitees: "+values);
+		var get_val = $("#attendeeslist_value").val();
+        var hidden_val = (get_val != "") ? get_val+"," : get_val;
+        $("#attendeeslist_value").val(hidden_val+""+values);
+    },
+      afterDeselect: function(values){
+        alert("Current invitees : "+values);
+		var get_val = $("#attendeeslist_value").val();
+        var new_val = get_val.replace(values, "");
+        $("#attendeeslist_value").val(new_val);
+      }
+    });*/
+	$('#undo_redo').on('change', function() {
+		var values = $('#undo_redo').val();
+		 
+		console.log("undo_redo " + values);
+	})
+	 
+	$('#select_all_attendees').click(function() {
+		$('#undo_redo option').prop('selected', true);
+	});
+	$('#unselect_all_attendees').click(function() {
+		$('#undo_redo option').prop('selected', false);
+	});
+	// Show test data 
+	function selectAll(){
+		for (var i = 0; i < document.getElementById("undo_redo").options.length; i++){
+			document.getElementById("undo_redo").options[i].selected = true;
+			
+		}
+		return true;
+	}
+	$('#updateAttendeesList').click(function() {
+		$('#undo_redo option').prop('selected', true);
+		var get_val = $("#undo_redo").val();
+		var attendees = [];
+        $.each($("#undo_redo option:selected"), function(){            
+            attendees.push($(this).val());
+        });
+		$("#attendeeslist_value").val(get_val);
+		console.log (get_val);
+		console.log("You have selected the Attendees - " + attendees.join(", "));
+	});
+	$("#newAttendees").submit( function() {
+		var frm = document.newAttendees;
+		var results = $(this).serialize().replace(/&/g, '\n');
+		
+		results = decodeURI(results); 
+		console.log(results);
+		selectAll();
+		
+		//$(this).attr("action", "newAttendees.html");
+ 		//frm.Addinvitees.action="newAttendees.html";
+		//frm.submit();
+		return false;
+	}); 
+	$("#select_all_invitees").click(function () {
+		$('#undo_redo option').prop('selected', true); 
+		return false;
+	}); 
+	$("#deselect_all_invitees").click(function () {
+		$('#undo_redo option').prop('selected', false);  
+        return false;		
+	});  
+});	
+	
+	function retrieveAllAbsentee(send_invite) {
+		var attendees = [];
+		$("#attendeesPresent").find("div").each(function(){ attendees.push(this.id); });
+		document.getElementById("listOfAttendees").value = attendees;
+		var absentees = [];
+		$("#attendeesNotPresent").find("div").each(function(){ absentees.push(this.id); });
+		document.getElementById("listOfAbsentees").value = absentees;
+		if(send_invite == "true")
+			document.getElementById("send_invite").value = 'true';
+		document.getElementById("updateAttendees").submit();
+	}
+	function addAbsentee(alias, person) {
+		$("#attendeesNotPresent").append("<div id=\"" + alias + "\" class=\"chip\" onclick=\"removeAbsentee('" + alias + "', '" + person + "')\">" + person + "</div>");
+		$("#attendeesPresent").find("#" + alias).remove();
+	}
+		
+	function removeAbsentee(alias, person) {
+		$("#attendeesPresent").append("<div id=\"" + alias + "\" class=\"chip\" onclick=\"addInvitee('" + alias + "', '" + person + "')\">" + person + "</div>");
+		$("#attendeesNotPresent").find("#" + alias).remove();
+	}
+
+</script>
+</body>
+</html>

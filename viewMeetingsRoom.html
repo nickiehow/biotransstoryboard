@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+<!-- Navigation-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html"><i class="fa fa-fw fa-home"></i>HOME</a></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+	    <li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans">
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="index.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Intranet</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">
+			<li><a href="calendarMeetings.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="viewMeetingsRoom.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Meeting Rooms</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+			  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+				<i class="fa fa-circle-o" style="font-size: 8px;"></i> 
+				<span class="nav-link-text">List Meetings</span>
+			  </a>
+			  <ul class="sidenav-second-level collapse" id="collapseMulti">
+				<li>
+				  <a href="upcomingMeetings.html">Upcoming Meetings</a>
+				</li>
+				<li>
+				  <a href="#">Past Meetings</a>
+				</li>
+			   </ul>
+			</li> 
+            <li><a href="newMeeting.html"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Create New Meeting</a></li>
+          </ul>
+        </li>
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Weekly Contributions</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> List Contributions</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">
+            <li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Calendar View (Custodians)</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o" style="font-size: 8px;"></i> Listing (Custodians)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Project Management</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Development</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Testing</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+	    <li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+ 
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">Wilson</span></a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Profile</h6>
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+     
+	</div>
+  </nav>
+</header>
+<section id="main-content-wrapper" role="main_wrapper">
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <div class="content_header">
+		<h1>Meeting Rooms</h1>
+		<ol class="breadcrumb">
+			<li><a href="javascript:void(0);"><i class="fa fa-fw fa-home"></i> Meeting</a></li>
+			<li><a href="upcomingMeetings.html" class="active">Meeting Rooms</a></li>
+		</ol>
+	  </div> 
+      <!-- Start Content Here -->
+      <div style="main-height: 575px;">
+	  
+			<!-- Start here -->
+			
+			<div id="accordion">
+				<!-- Meeting Room #04-07B -->
+				<div class="card">
+					<div class="card-header card-title" id="headingPROT-04-07B">
+						<a role="button" class="expanded" id="PROT-04-07B" data-id="PROT-04-07B" data-toggle="collapse" data-target="#collapsePROT-04-07B">
+						  <i class="fa fa-fw fa-book"></i> BioTrans Meeting Room #04-07B (06 Seating Capacity - Biotrans Staff Only)
+						</a>
+					</div>
+
+					<div id="collapsePROT-04-07B" class="collapse show">
+					  <div class="card-body">
+						<!-- Content start here -->
+						<div class="row">
+ 						    <div class="col-md-3">
+								<div class="bxslider" id="slider-1">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-07B_1.png" alt="BioTrans Meeting Room #04-07B" onclick="openModal();currentSlide(1,1);">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-07B_2.png" alt="BioTrans Meeting Room #04-07B" onclick="openModal();currentSlide(1,2);">
+								</div>
+								
+							</div>
+							<div class="col-md-9">
+								 
+									<p>The Meeting Rooms is located at Proteos Level 4 #04-19, it has 6 seating capacity and is for Biotrans staff only.</p>
+									 
+									<p>For downloadable floor plans and room dimensions for the meeting rooms, please visit our <a href="#">Floor Plans page</a>.</p>
+								 
+							</div>
+						</div>
+						<!-- Content end here -->
+					  </div>
+					</div>
+				</div>
+				<!--BioTrans Conference Room #04-19-->
+				<div class="card">
+					<div class="card-header card-title" id="headingPROT-04-19">
+						
+						<a role="button" class="expanded" id="PROT-04-19" data-id="PROT-04-19" data-toggle="collapse" data-target="#collapsePROT-04-19" aria-expanded="true" aria-controls="collapsePROT-04-19">
+						  BioTrans Conference Room #04-19  (14 Seating Capacity - Biotrans Staff Only)
+						</a>
+					  
+					</div>
+
+					<div id="collapsePROT-04-19" class="collapse show">
+					  <div class="card-body">
+						<!-- Content start here -->
+						<div class="row">
+ 							<div class="col-md-3">
+ 								<div class="bxslider" id="slider-2">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-19_1.png" alt="BioTrans Conference Room #04-19" onclick="openModal();currentSlide(2,1);">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-19_2.png" alt="BioTrans Conference Room #04-19" onclick="openModal();currentSlide(2,2);">
+								</div>
+							</div>
+							<div class="col-md-9">
+								 
+									<p>The Meeting Rooms is located at Proteos Level 4 #04-19, it has 14 seating capacity and is for Biotrans staff only.</p>
+									 
+									<p>For downloadable floor plans and room dimensions for the meeting rooms, please visit our <a href="#">Floor Plans page</a>.</p>
+								 
+							</div>
+						</div>
+						<!-- Content end here -->
+					  </div>
+					</div>
+				</div>
+				
+				<!--BioTrans Conference Room #04-8C-->
+				<div class="card">
+					<div class="card-header card-title" id="headingPROT-04-08C">
+						
+						<a role="button" class="expanded" id="PROT-04-08C" data-id="PROT-04-08C" data-toggle="collapse" data-target="#collapsePROT-04-08C">
+						  Proteos Conference Room #04-08C  (11 Seating Capacity)
+						</a>
+					  
+					</div>
+
+					<div id="collapsePROT-04-08C" class="collapse show">
+					  <div class="card-body">
+						<!-- Content start here -->
+						<div class="row">
+ 							<div class="col-md-3">
+								<div class="bxslider" id="slider-3">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-08C_1.png" alt="BioTrans Meeting Room #04-08C" onclick="openModal();currentSlide(3,1);">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-08C_2.png" alt="BioTrans Meeting Room #04-08C" onclick="openModal();currentSlide(3,2);">
+								</div>
+							</div>
+							<div class="col-md-9">
+								 
+									<p>The Meeting Rooms is located at Proteos Level 4 #04-08C, it has 11 seating capacity and is for general use.</p>
+									 
+									<p>For downloadable floor plans and room dimensions for the meeting rooms, please visit our <a href="#">Floor Plans page</a>.</p>
+								 
+							</div>
+						</div>
+						<!-- Content end here -->
+					  </div>
+					</div>
+				</div>
+				
+				<!--BioTrans Conference Room #04-19A-->
+				<div class="card">
+					<div class="card-header card-title" id="heading04-19A">
+						
+						<!--<a role="button" class="expanded" data-toggle="collapse" id="PROT-04-19A" data-id="PROT-04-19A" data-target="#collapse04-19A"><!--aria-expanded="true" aria-controls="collapse04-19A" 
+						 
+						</a>-->
+					    <a role="button" class="expanded" data-toggle="collapse" id="PROT-04-19A" data-id="PROT-04-19A" data-target="#collapse04-19A"><!--aria-expanded="true" aria-controls="collapse04-19A"-->
+						  Proteos Conference Room #04-19A  (18 Seating Capacity)
+						</a>
+					</div>
+
+					<div id="collapse04-19A" class="collapse show"><!-- aria-labelledby="heading04-19A" data-parent="#accordion" -->
+					  <div class="card-body">
+						<!-- Content start here -->
+						<div class="row">
+ 							<div class="col-md-3">
+								<div class="bxslider" id="slider-4">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-19A_1.png" alt="Proteos Conference Room #04-19A" onclick="openModal();currentSlide(4,1);">
+								<img class="room-image" src="assets/img/pic_img/PROT-04-19A_2.png" alt="Proteos Conference Room #04-19A" onclick="openModal();currentSlide(4,2);">
+								</div>
+							</div>
+							<div class="col-md-9">
+								 
+									<p>The Meeting Rooms is located at Proteos Level 4 #04-19A, it has 18 seating capacity and is for general use.</p>
+									 
+									<p>For downloadable floor plans and room dimensions for the meeting rooms, please visit our <a href="#">Floor Plans page</a>.</p>
+								 
+							</div>
+						</div>
+						<!-- Content end here -->
+					  </div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			<!-- End here -->
+			
+			<!-- Room Image Popup here --> 
+			<div id="popupModal" class="popup-modal"> 
+			  <span class="popup-close cursor" onclick="closeModal()">&times;</span>
+			  <div class="popup-modal-content">
+				<div id="photoSlides">
+					<div class="photoSlides">
+					  <img id="photoImg1" data-id="1" style="height: 100%">
+					</div>
+
+					<div class="photoSlides">
+					  <img id="photoImg2" data-id="2" style="height: 100%">
+					</div>
+				</div>
+				<div id="popup-start"></div>
+				<!-- Next/previous controls -->
+				<a class="popup-prev">&#10094;</a>
+				<a class="popup-next">&#10095;</a>
+				<div class="popup-caption">
+				  <p id="photocaption"></p>
+				</div>
+				<input type="hidden" id="photoImg" value="">
+				<input type="hidden" id="photoImgNo" value="0">
+				<input type="hidden" id="photoImgId" value="0">
+			  </div>
+			</div>
+			<!-- Room Image Popup End -->  
+				 
+	  
+	  
+	  </div>
+	  <!-- End Content here -->
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright &copy; Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<!-- Delete Model start -->
+<div class="remove-record-model">
+    <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" style="width:55%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                	<h4 class="modal-title" id="custom-width-modalLabel">Delete Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <h4>Are you sure you want to delete this record?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary waves-effect remove-data-from-delete-form" data-dismiss="modal"><i class="fa fa-times" style="color:white"></i> Close</button>
+                    <a href="#" class="btn btn-danger waves-effect waves-light" id="remove-record"><i class="fa fa-trash-o" style="color:white"></i> Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete Model here -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+<script>
+$(function () {
+ 	// Set a count to 1
+	var sCount = 1;
+	var slider;
+	// For each result
+    $('.bxslider').each(function () {
+		
+        // If there is more than 1 image
+        if ($(this).find('img').length > 1) {
+		 
+            // Initialise a slider
+            slider = $('#slider-' + sCount).bxSlider({
+                auto: true,
+				autoControls: true,
+				stopAutoOnClick: true,
+				pager: true,
+				slideWidth: 600,
+                duration: 500,
+				//mode:'fade',
+				onSliderLoad: function () {
+					$('.bx-viewport').on('click','a.collapse-toggle', function () {
+ 						//var ele = $(this).parent().find('.collapse-box'); // element to to collapse (UL)
+						//ele.collapse('toggle');
+						////$(this).parent().find('.collapse-box').collapse('toggle');    // one liner
+						 
+					});
+					 
+					
+				}
+				
+            });
+			slider.reloadSlider();
+			console.log("#slider-" + sCount); 
+        }
+        // Increase the count
+        sCount++;
+    });
+	
+	$('#PROT-04-07B,#PROT-04-19,#PROT-04-19A,#PROT-04-08C').click(function () {
+		var last_clicked_id = $(this).data("id");
+		var id = $(this).attr('data-id');
+		$('#collapse'+id).collapse('toggle');
+		if ($("#collapsePROT-04-07B").hasClass("collapse show")) {
+			//console.log("collapse show PROT-04-07B");
+			$('collapsePROT-04-07B').show();
+			$(this).addClass('show');
+		}
+		if ($("#collapsePROT-04-19").hasClass("collapse show")) {
+			//console.log("collapse show PROT-04-19");
+			$('collapsePROT-04-19').show();
+			$(this).addClass('show');
+			$("#slider-2").show();
+		}
+		if ($("#collapsePROT-04-08C").hasClass("collapse show")) {
+			//console.log("collapse show PROT-04-08C");
+			$('collapsePROT-04-8C').show();
+ 		}
+		if ($("#collapsePROT-04-19A").hasClass("collapse show")) {
+			//console.log("collapse show PROT-04-19A");
+			$('collapsePROT-04-19A').show();
+		}
+	});
+});	 
+function showHide(ememId,str) {//showhide('#lightbox, #img1, #img2',"block");	
+	return $(ememId).css("display",str);
+}
+// Open the Modal
+function openModal() {
+	showHide("#popupModal","block");
+}
+
+// Close the Modal
+function closeModal() {
+	showHide("#popupModal","none");
+}
+
+var slideIndex = 1;
+//showSlides(slideIndex);
+
+$(".popup-prev").on('click',function() {
+	prev_image(); 
+});
+$(".popup-next").on('click',function() {
+ 	next_image(); 
+});
+function prev_image() {
+	var n = -1;
+	var prev_val = $("#photoImg").val() ; //document.getElementById( "photoImg" ).value;
+	var prev_val = Number(prev_val) - 1;
+	var photoImgId = $("#photoImgId").val();
+	var total_img = $('.photoSlides').length;
+	if(prev_val <= -1){
+		prev_val = total_img - 1;
+	}
+	//$("#photoImg").attr( 'src' , 'assets/img/pic_img/'+photoImg+"_"+prev_val+'.png' );
+ 	$("#photoImgNo").val(prev_val);  //document.getElementById( "photoImgNo" ).value = prev_val;
+	showSlides(photoImgId,slideIndex += n); 
+}
+function next_image() {
+	var n = 1;
+	var photoImg = $("#photoImg").val();
+	var next_val = document.getElementById( "photoImgNo" ).value;
+    var next_val = Number(next_val)+1;
+	var photoImgId = $("#photoImgId").val();
+	var total_img = $('.photoSlides').length;
+	
+ 	if(next_val >= total_img){
+	   next_val = 0;
+	}
+	$("#photoImg").attr( 'src' , 'assets/img/pic_img/'+photoImg+"_"+next_val+'.png' );
+ 	$("#photoImgNo").val(next_val); //document.getElementById( "photoImgNo" ).value = next_val;
+	showSlides(photoImgId,slideIndex += n); 
+}
+ 
+function currentSlide(x,n) {
+ 	showSlides(x,slideIndex = n);
+}
+
+function showSlides(x, n) {
+	var i;
+	var slides = document.getElementsByClassName("photoSlides");
+	var dots = document.getElementsByClassName("room-image");
+	var captionText = document.getElementById("caption");
+	var photoImg = "";
+	var photoName = "";
+	switch(x){
+		case 1:	 
+		photoImg = "PROT-04-07B";
+		photoName = "BioTrans Meeting Room #04-07B (06 Seating Capacity - Biotrans Staff Only)";
+		$("#photoImg1").attr("src","assets/img/pic_img/PROT-04-07B_1.png");
+		$("#photoImg2").attr("src","assets/img/pic_img/PROT-04-07B_2.png");
+		$("#photoImg1,#photoImg2").prop("alt", photoName);
+		$("#photoImg").val(photoImg);
+		$("#photocaption").html(photoName);
+		break;
+		case 2:	 
+		photoImg = "PROT-04-19";
+		photoName = "BioTrans Conference Room #04-19 (14 Seating Capacity - Biotrans Staff Only)";
+		$("#photoImg1").attr("src","assets/img/pic_img/PROT-04-19_1.png");
+		$("#photoImg2").attr("src","assets/img/pic_img/PROT-04-19_2.png");
+		$("#photoImg1,#photoImg2").prop("alt", photoName);
+		$("#photoImg").val(photoImg);
+		$("#photocaption").html(photoName);
+		break;
+		case 3:	 
+		photoImg = "PROT-04-08C";
+		photoName = "Proteos Conference Room #04-08C (11 Seating Capacity)";
+		$("#photoImg1").attr("src","assets/img/pic_img/PROT-04-08C_1.png");
+		$("#photoImg2").attr("src","assets/img/pic_img/PROT-04-08C_2.png");
+		$("#photoImg1,#photoImg2").prop("alt", photoName);
+ 		$("#photoImg").val(photoImg);
+		$("#photocaption").html(photoName);
+		break;
+		case 4:	 
+		photoImg = "PROT-04-19A";
+		photoName = "Proteos Conference Room #04-19A (18 Seating Capacity)";
+		$("#photoImg1").attr("src","assets/img/pic_img/PROT-04-19A_1.png"); 
+		$("#photoImg2").attr("src","assets/img/pic_img/PROT-04-19A_2.png");
+		$("#photoImg1,#photoImg2").prop("alt", photoName);
+		$("#photoImg").val(photoImg);
+		$("#photocaption").html(photoName);
+		break;
+		default:
+	}
+	
+	if (n > slides.length) {slideIndex = 1}
+	if (n < 1) {slideIndex = slides.length}
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+		$("#room-image").removeClass("active")
+	}
+  	slides[slideIndex-1].style.display = "block";
+	dots[slideIndex-1].className += " active";
+ 	//captionText.innerHTML = dots[slideIndex-1].alt;
+	$("#photoImgId").val(x);
+}
+</script>
+</body>
+</html>

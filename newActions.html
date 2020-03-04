@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="fixed-nav sticky-footer" id="page-top">
+<!-- Start Page Loading -->
+<div id="loader-wrapper">
+	<div id="loader"></div>
+	<div class="loader-section section-left"></div>
+	<div class="loader-section section-right"></div>
+</div>
+<!-- End Page Loading -->
+
+<!-- Navigation-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top main-sidebar" id="mainNav">
+    <a class="navbar-brand" href="home.html"><i class="fa fa-fw fa-home"></i>HOME</a></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+	   
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+	    <li class="center-align">
+		<div class="container">
+			<img class="responsive-img" src="assets/img/biotrans_logo.jpg" alt="BioTrans">
+		</div>
+	    </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="home.html">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="charts.html">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Intranet</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Meeting">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMeeting" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-calendar"></i>
+            <span class="nav-link-text">Meeting</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMeeting">
+			<li><a href="calendarMeetings.html"><i class="fa fa-circle-o"></i> Calendar View</a></li>
+			<li><a href="viewMeetingsRoom.html"><i class="fa fa-circle-o"></i> Meeting Rooms</a></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+			  <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+				<i class="fa fa-circle-o"></i> 
+				<span class="nav-link-text">List Meetings</span> 
+			  </a>
+			  <ul class="sidenav-third-level collapse" id="collapseMulti">
+				<li>
+				  <a href="upcomingMeetings.html#upcomingMeetings"><i class="fa fa-circle-o"></i> Upcoming Meetings</a>
+				</li>
+				<li>
+				  <a href="upcomingMeetings.html#pastMeetings"><i class="fa fa-circle-o"></i> Past Meetings</a>
+				</li>
+			   </ul>
+			</li> 
+            <li><a href="newMeeting.html"><i class="fa fa-circle-o"></i> Create New Meeting</a></li>
+          </ul>
+        </li>
+		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProjects" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-tasks"></i>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseProjects">
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Weekly Contributions</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><i class="fa fa-circle-o"></i> List Contributions</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Instruments">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseInstruments" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">Instruments</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseInstruments">
+            <li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Calendar View</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Listing</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Calendar View (Custodians)</a></li>
+			<li><a href="javascript:void(0);"><i class="fa fa-circle-o"></i> Listing (Custodians)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Project Management</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+            <li>
+              <a href="login.html">Login Page</a>
+            </li>
+            <li>
+              <a href="register.html">Registration Page</a>
+            </li>
+            <li>
+              <a href="forgot-password.html">Forgot Password Page</a>
+            </li>
+            <li>
+              <a href="blank.html">Blank Page</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Development</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a href="#">Second Level Item</a>
+            </li>
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+                <li>
+                  <a href="#">Third Level Item</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Testing</span>
+          </a>
+        </li>
+      </ul>
+	   
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+	    <li class="nav-item">
+          <a href="javascript:void(0);" class="nav-link toggle-fullscreen">
+            <i class="fa fa-fw fa-expand"></i>FullScreen</a>
+        </li>
+        <!--
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-envelope"></i>
+            <span class="d-lg-none">Messages
+              <span class="badge badge-pill badge-primary">12 New</span>
+            </span>
+            <span class="indicator text-primary d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>David Miller</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>Jane Smith</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>John Doe</strong>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all messages</a>
+          </div>
+        </li>
+        -->
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-fw fa-user"></i><span id="userProfile">Wilson</span></a>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">Profile</h6>
+            <!--<div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+               
+            </a>-->
+             
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<section id="main-content-wrapper" role="main_wrapper">
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+	  <div class="content_header">
+		<h1>VIEW MEETING</h1>
+		<ol class="breadcrumb">
+			<li><i class="fa fa-fw fa-home"></i>  Meeting Minutes</li>
+			<li><a href="viewMeeting.html">View Meeting</a></li>
+			<li><a href="newAgendas.html" class="active">Actions</a></li>
+		</ol>
+	  </div> 
+      
+	  <!-- Start Create New Meeting -->
+	  
+      <!--<div class="card mb-3">
+        <div class="card-header card-title">
+          <i class="fa fa-fw fa-edit"></i> Step 1 - Create New Meeting
+		</div>
+        <div class="card-body">
+			<div class="card-body-icon">
+                <i class="fa fa-fw fa-tasks"></i>
+			</div>
+			<div class="mr-3">
+			blah blah
+ 			</div>
+        </div>
+      </div>-->
+      <!-- End Create New Meeting -->
+	  <!-- Start Template here -->
+ 
+	  <!-- Stepper -->
+
+	  <div class="row">
+        <div class="col-md-12">
+			
+			<div id="booking-progress" class="hb-progress-tracker">
+				<ul class="hb-progress-bar">
+					<li class="hb-step-tabs active hb-first">
+					    <a href="viewMeeting.html" title="Basic Info">
+						<span>1</span>Basic Info</a>
+						<div class="step done"></div>
+					</li>
+					<li class="hb-step-tabs active"> 
+						<a href="newAgendas.html" title="Add Agendas"><span>2</span>Agendas</a>
+						<div class="step done"></div>
+					</li>
+					<li class="hb-step-tabs active">
+						<a href="newInvitees.html" title="Add Invitees"><span>3</span>Invitees</a>
+						<div class="step done"></div>
+ 					</li>
+					 
+					<li class="hb-step-tabs active">
+						<a href="newAttendees.html" title="Add Attendees"><span>3</span>Attendees</a>
+						<div class="step done"></div>
+ 					</li>
+					<li class="hb-step-tabs active current">
+						<a href="javascript:void(0)" title="Add Actions"><span>4</span>Actions</a><div class="step"></div>
+					</li>
+					<li class="hb-step-tabs hb-last disabled" title="Upload File Attachments"><a href="javascript:void(0)"><span>5</span>Done - File Attachments</a><div class="step"></div></li>
+				</ul>
+			</div>
+			
+		</div>
+	  </div>
+	  <!--<div class="row">
+        <div class="col-md-12">
+			
+					<ul class="steps hidden" style="width: 100%;">
+					  <li class="active"><a href="">1. - Create Meeting</a></li>
+ 					  <li class="undone"><p>2. - Agendas</p></li>
+					  <li class="undone"><p>3. - Invitees</p></li>
+					  <li class="undone"><p>4. - Actions</p></li>
+					  <li class="done"><p>5. - File Attachments</p></li>
+					</ul>
+ 			 
+		</div>
+	  </div>-->
+	 
+	  <div class="row">
+        <div class="col-xl-12 col-sm-12 mb-3">
+          <div class="card text-black bg-lightgrey o-hidden h-100">
+		    <div class="card-header card-title">
+				<i class="fa fa-fw fa-edit"></i> Step 4 - Actions
+			</div>
+            <div class="card-body">
+              <!--<div class="card-body-icon">
+                <i class="fa fa-fw fa-tasks"></i>
+              </div>-->
+              <div class="mr-3">
+				<!-- Form Start -->
+					<table class="table table-bordered table-hover" id="dataAgendas">
+					<thead>
+					<tr>
+						<th data-field="OrderName" style="width:10%;">Order No.</th>
+						<th data-field="Description">Description</th>
+						<th data-field="Keywords" style="width:25%;">Keywords</th>
+						<th data-field="mode" style="width:22%;">Mode</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					  <td>1</td>
+					  <td>Previous Meeting Review</td>
+					  <td>#previousMeetingReview</td>
+					  <td>
+						<button type="button" class="btn btn-primary btn-sm edit-actions-record" data-toggle="modal" data-id="1" data-target="#actionsEditModal">Edit</button> 
+						<button type="button" class="btn btn-primary btn-sm view-actions-record" data-id="1">View Actions</button> 
+						<button type="button" class="btn btn-primary btn-sm add-actions-record" data-toggle="modal" data-id="1" data-target="#actionsAddModal">Add New</button> 
+						<!--<a class="btn btn-danger btn-sm remove-record" data-toggle="modal" data-url="" data-id="1" data-target="#custom-width-modal"><i class="fa fa-trash-o" style="color:white"></i><span style="color:white"> Del</span></a>-->
+					  </td>
+					</tr>
+					<tr>
+					  <td>2</td>
+					  <td>2 Meeting Review</td>
+					  <td>#2</td>
+					  <td>
+						<button type="button" class="btn btn-primary btn-sm edit-actions-record" data-toggle="modal" data-id="2" data-target="#actionsEditModal">Edit</button> 
+						<button type="button" class="btn btn-primary btn-sm view-actions-record" data-id="2">View Actions</button> 
+						<button type="button" class="btn btn-primary btn-sm add-actions-record" data-toggle="modal" data-id="2" data-target="#actionsAddModal">Add New</button> 
+						<!--<a class="btn btn-danger btn-sm remove-record" data-toggle="modal" data-url="" data-id="1" data-target="#custom-width-modal"><i class="fa fa-trash-o" style="color:white"></i><span style="color:white"> Del</span></a>-->
+					  </td>
+					</tr>
+					</tbody> 
+					</table>
+					
+					<div class="row card-body no-padding-top" id="view-actions-data" style="display:none;"> 
+					 
+					<table class="table table-bordered table-hover" id="dataActionDetails">
+					<thead>
+					<tr> 
+						<th data-field="Description">Description</th>
+						<th data-field="Owner" style="width:20%;">Owner</th>
+						<th data-field="Deadline" style="width:15%;">Deadline</th>
+						<th data-field="Status">Status</th>
+						<th data-field="Status" style="width:22%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+					</tr>
+ 					</thead>
+					<tbody> 
+					<tr>
+						<td><input type="text" name="description" class="form-control" value="ER Model"></td>
+						<td><select id="owner" name="owner" class="form-control">
+								<option value="wilson" selected="">Wilson Kwo</option>
+								<option value="dummy_user1">Dummy User1</option>
+								<option value="dummy_user3">Dummy User3</option>
+							</select>
+						</td>
+						<td>
+								<div class="input-group">
+									<input type="text" id="deadline" name="deadline" class="form-control date-pk" value="26/06/2018">
+									<label class="input-group-addon btn" for="deadline">
+									   <span class="fa fa-fw fa-calendar open-datetimepicker" style="font-size:20px"></span>
+									</label>                    
+								</div>
+						</td>
+						<td>
+						<select name="status" class="form-control">
+							<option value="0" selected="">In Progress</option>
+							<option value="1">Completed</option>
+							<option value="-1">Delayed</option>
+						</select>
+						</td>
+						<td><button type="button" class="btn btn-primary btn-sm edit-actions"><i class="fa fa-fw fa-pencil"></i> Update</button> </td>
+					</tr>
+					</tbody> 
+					</table>
+					</div> 
+					<div class="row">
+							<div class="col-md-3 mb-3">
+								<button class="btn btn-primary btn-lg btn-block" type="submit">Next</button>
+							</div>
+							<div class="col-md-3 mb-3">
+								
+							</div>
+							<div class="col-md-3 mb-3"></div>
+							<div class="col-md-3 mb-3">
+								<button type="button" class="btn btn-primary btn-lg  btn-block btn-right" onclick="location.href='newAttendees.html'">Previous</button>
+							</div>
+					</div>
+						 
+					<div class="pad margin no-print">
+							<div class="callout callout-info show" style="margin-bottom: 0!important;">
+								<h4><i class="fa fa-info"></i> Note:
+								<button type="button" class="close" data-dismiss="callout" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								</h4>
+								Check availability amd manually note down on the booking sheet at the room door first, before sending this LIMS booking
+								
+							</div>
+					</div>
+						
+					 
+					
+				
+				<!-- Form End -->
+			  </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+	  <!-- End Template here -->
+	   
+ 	 
+	</div>
+    <!-- End /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright &copy; Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Start Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	<!-- Delete Model -->
+	<div class="remove-record-model">
+		<div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog" style="width:55%;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="custom-width-modalLabel">Delete Record</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<h4>Are you sure you want to delete this record?</h4>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary waves-effect remove-data-from-delete-form" data-dismiss="modal">Close</button>
+						<a href="#" class="btn btn-danger waves-effect waves-light" id="remove-record"><i class="fa fa-trash-o" style="color:white"></i> Delete</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Edit Agendas Item Modal Start -->
+	<div id="actionsAddModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				    <h4 class="modal-title">Add New Actions</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+					<form action="" class="form-edit" id="agendasModalForm" method="post">
+				         
+						<div class="modal-body">  
+				        	<div class="row">
+				        		<div class="col-md-3 mb-3">Order No</div>
+				        		<div class="col-md-3 mb-3"><input type="number" class="form-control" name="orderNumber" id="AgendasorderNumber" placeholder="" value="1" readonly></div>       
+				        	</div>   
+				        	<div class="row"> 
+                                <div class="col-md-3 mb-3">Description</div>							
+				            	<div class="col-md-9 mb-3"><textarea name="description" id="Agendasdescription" class="form-control" required>Software-Defined Network Sentinel Demo</textarea></div>
+				            </div>
+							<div class="row"> 
+                                <div class="col-md-3 mb-3">Owner</div>							
+				            	<div class="col-md-9 mb-3">
+								<select name="select-options" id="select-options" class="form-control select-dropdown" >
+									<option value="">Wilson Kwo</option>
+								</select>
+							<input type="hidden" name="meeting_id" value="1">
+							<input type="hidden" name="_csrf" value="909b509b-8cb4-4795-b5c0-88a9b64e2588"></div>
+				            </div>
+							<div class="row">
+								<div class="col-md-3 mb-3">Deadline</div>	
+								<div class="col-md-6 input-group">
+									<input type="text" id="deadline" name="deadline" class="form-control datepk" value="">
+									<label class="input-group-addon btn" for="deadline">
+									   <span class="fa fa-fw fa-calendar open-datetimepicker" style="font-size:20px"></span>
+									</label>                    
+								</div>
+							</div>
+							 
+				        </div>
+				        
+						<div class="modal-footer">
+				            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+				            <button type="submit" class="btn btn-primary btn-sm">Submit</button> 
+				            <input type="hidden" name="Agendas_id" id="Agendas_id" value="">
+				        </div>
+					</form>
+ 				</div>
+				
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	<!-- Edit Agendas Item Modal End -->
+	<!-- Edit Agendas Item Modal Start -->
+	<div id="actionsEditModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				    <h4 class="modal-title">Edit Actions</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<form action="" class="form-edit" id="agendasModalForm" method="post">
+				         
+				<div class="modal-body">  
+				        	<div class="row">
+				        		<div class="col-md-3 mb-3">Order No</div>
+				        		<div class="col-md-3 mb-3"><input type="number" class="form-control" name="orderNumber" id="AgendasorderNumber" placeholder="" value="1" readonly></div>       
+				        	</div>   
+				        	<div class="row"> 
+                                <div class="col-md-3 mb-3">Description</div>							
+				            	<div class="col-md-9 mb-3"><textarea name="description" id="Agendasdescription" class="form-control" required>Software-Defined Network Sentinel Demo</textarea></div>
+				            </div>
+							<div class="row"> 
+                                <div class="col-md-3 mb-3">Keywords</div>							
+				            	<div class="col-md-9 mb-3"><textarea name="keywords" id="Agendaskeywords" class="form-control" required>installation</textarea>
+							<input type="hidden" name="meeting_id" value="1">
+							<input type="hidden" name="_csrf" value="909b509b-8cb4-4795-b5c0-88a9b64e2588"></div>
+				            </div>
+				        </div>
+				        <div class="modal-footer">
+				            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+				            <button type="submit" class="btn btn-primary btn-sm">Submit</button> 
+				            <input type="hidden" name="Agendas_id" id="Agendas_id" value="">
+				        </div>
+				        </form>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	<!-- Edit Agendas Item Modal End -->
+  </div>
+</section>
+<!-- Bootstrap core JavaScript-->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/vendor/sb-admin.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>BioTrans LIMS</title>
+<link rel="icon" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/glyphicon.css">
+<link rel="stylesheet" href="assets/css/vendor/dataTables.bootstrap.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-timepicker.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-lightbox.min.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.timepicker.css">
+<link rel="stylesheet" href="assets/css/vendor/select2.min.css">
+<link rel="stylesheet" href="assets/css/vendor/perfect-scrollbar.css">
+<link rel="stylesheet" href="assets/css/vendor/sb-admin.css">
+<link rel="stylesheet" href="assets/css/vendor/jquery.bxslider.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+	body, html {
+		height: 100%;
+	}
+    body {
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: flex;
+      -ms-flex-align: center;
+      -ms-flex-pack: center;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+   
+    }
+    .error {font-size:18px;color:#ff0000;}
+	 	 
+	.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('assets/img/bg.jpg');
+    background-repeat:repeat;
+  }
+</style>
+</head>
+<body>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+ 
+  
+  <main role="main">
+	<!-- Main Container Start here default height 500px -->
+ 
+		<br><br>
+		<div class="container">
+				 
+				<div style="text-align:center"><img src="assets/img/biotrans_logo.jpg" alt=""></div>
+				<div class="card card-login mx-auto mt-3">
+				 
+				  <div class="card-header"><strong>BioTrans Landing Page</strong></div>
+				  <div class="card-body">
+					   
+					<c:if test="${param.error ne null}">
+						<div class="form-group error">
+							<i class="fa fa-fw fa-exclamation-circle"></i>Invalid username and password.
+						</div>
+					</c:if>
+					<c:if test="${param.logout ne null || logout ne null}">
+						<div class="form-group error">
+							<i class="fa fa-fw fa-sign-out"></i> You have been logged out.
+						</div>
+					</c:if>
+					<form action="home.html" class="form-signin" method="post">
+					  <div class="form-group">
+						<label for="username">User Name</label>
+						<input class="form-control" name="username" id="username" type="text" placeholder="Enter User Name" required autofocus>
+					  </div>
+					  <div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input class="form-control" name="password" id="password" type="password" placeholder="Password" required>
+					  </div>
+					  <!--<div class="form-group">
+						<div class="form-check">
+						  <label class="form-check-label">
+							<input class="form-check-input" type="checkbox"> Remember Password</label>
+						</div>
+					  </div>-->
+					  <div class="row center-align"> 
+					  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+					  <button type="submit" id="submit" class="btn btn-primary btn-block waves-effect">
+                          Login <i class="fa fa-fw fa-sign-in"></i>
+                      </button>
+ 					  </div>
+					</form>
+					<!--<div class="text-center">
+					  <a class="d-block small mt-3" href="register.html">Register an Account</a>
+					  <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+					</div>-->
+				  </div>
+				</div>
+	 
+				 
+			</div>
+			 
+			
+		 
+	<!-- Main Container End here default height 500px -->
+  </main>
+  
+</div>
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/jquery.bxslider.min.js"></script>
+<script src="assets/js/vendor/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/vendor/bootstrap-lightbox.min.js"></script>
+<script src="assets/js/vendor/jquery.easing.min.js"></script>
+<script src="assets/js/vendor/jquery.timepicker.min.js"></script>
+<script src="assets/js/js-common.js"></script>
+<script src="assets/js/js-scripts.js"></script>
+</body>
+</html>
